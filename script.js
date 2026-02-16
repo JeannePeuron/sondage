@@ -31,26 +31,23 @@ function surveyStats(answers) {
     answers[i] = answers[i].trim().toLowerCase();
   }
 
-  let newArray = [
-    {
-      yes: 0,
-      no: 0,
-      maybe: 0,
-      invalid: 0,
-    },
-  ];
-
+  let newArray = {
+    yes: 0,
+    no: 0,
+    maybe: 0,
+    invalid: 0,
+  };
   answers.forEach((element) => {
     if (element != "yes" && element != "no" && element != "maybe") {
-      newArray[0].invalid += 1;
+      newArray.invalid += 1;
     } else if (element === "yes") {
-      newArray[0].yes += 1;
+      newArray.yes += 1;
     }
     if (element === "no") {
-      newArray[0].no += 1;
+      newArray.no += 1;
     }
     if (element === "maybe") {
-      newArray[0].maybe += 1;
+      newArray.maybe += 1;
     }
   });
   return newArray;
